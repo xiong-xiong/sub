@@ -1,126 +1,132 @@
 <template>
   <div class="calcContainer">
-    <div class="calories">Kalorit: {{ calories }}</div>
+    <div class="calories">Calories: {{ calories }}</div>
     <form @submit.prevent="calculateCalories">
       <div>
-        <label for="size">Valitse koko:</label>
+        <label for="size">Choose size:</label>
         <select v-model="size" name="size" @change="calculateCalories">
-          <option value="1">15 cm</option>
-          <option value="2">30 cm</option>
+          <option value="1">15 cm / 6"</option>
+          <option value="2">30 cm / 12"</option>
         </select>
       </div>
       <div>
-        <label for="bread">Valitse leipä:</label>
+        <label for="bread">Choose bread:</label>
         <select
           v-model="selectedBread"
           name="bread"
           @change="calculateCalories"
         >
-          <option disabled value="">Valitse leipä</option>
+          <option disabled value="">Choose bread</option>
           <option
             v-for="(bread, key) in breads"
             :key="key"
             v-bind:value="bread"
           >
-            {{ bread.finnish }}
+            {{ bread.english }}
           </option>
         </select>
       </div>
       <div>
-        <label for="meat">Valitse täyte:</label>
+        <label for="meat">Choose filling:</label>
         <select v-model="selectedMeat" name="meat" @change="calculateCalories">
-          <option disabled value="">Valitse täyte</option>
+          <option disabled value="">Choose filling</option>
           <option v-for="(meat, key) in meats" :key="key" v-bind:value="meat">
-            {{ meat.finnish }}
+            {{ meat.english }}
           </option>
         </select>
       </div>
       <div>
-        <label for="sauce">Valitse kastike:</label>
+        <label for="sauce">Choose sauce:</label>
         <select
           v-model="selectedSauce"
           name="sauce"
           @change="calculateCalories"
         >
-          <option disabled value="">Valitse kastike</option>
+          <option disabled value="">Choose sauce</option>
           <option
             v-for="(sauce, key) in sauces"
             :key="key"
             v-bind:value="sauce"
           >
-            {{ sauce.finnish }}
+            {{ sauce.english }}
           </option>
         </select>
       </div>
       <div>
-        <label for="sauce2">Valitse toinen kastike:</label>
+        <label for="sauce2">Choose second sauce:</label>
         <select
           v-model="selectedSauceII"
           name="sauce2"
           @change="calculateCalories"
         >
-          <option disabled value="">Valitse kastike</option>
+          <option disabled value="">Choose sauce</option>
           <option
             v-for="(sauce, key) in sauces"
             :key="key"
             v-bind:value="sauce"
           >
-            {{ sauce.finnish }}
+            {{ sauce.english }}
           </option>
         </select>
       </div>
       <div>
-        <label for="sauce3">Valitse kolmas kastike:</label>
+        <label for="sauce3">Choose third sauce:</label>
         <select
           v-model="selectedSauceIII"
           name="sauce3"
           @change="calculateCalories"
         >
-          <option disabled value="">Valitse kastike</option>
+          <option disabled value="">Choose sauce</option>
           <option
             v-for="(sauce, key) in sauces"
             :key="key"
             v-bind:value="sauce"
           >
-            {{ sauce.finnish }}
+            {{ sauce.english }}
           </option>
         </select>
       </div>
       <div>
-        <label for="cheese">Valitse juusto:</label>
+        <label for="cheese">Choose cheese:</label>
         <select
           v-model="selectedCheese"
           name="cheese"
           @change="calculateCalories"
         >
-          <option disabled value="">Valitse juusto</option>
+          <option disabled value="">Choose cheese</option>
           <option
             v-for="(cheese, key) in cheeses"
             :key="key"
             v-bind:value="cheese"
           >
-            {{ cheese.finnish }}
+            {{ cheese.english }}
           </option>
         </select>
       </div>
       <div>
-        <label for="cheese">Valitse lisäjuusto:</label>
+        <label for="cheese">Choose extra cheese:</label>
         <select
           v-model="selectedCheeseII"
           name="cheeseII"
           @change="calculateCalories"
         >
-          <option disabled value="">Valitse juusto</option>
+          <option disabled value="">Choose cheese</option>
           <option
             v-for="(cheese, key) in cheeses"
             :key="key"
             v-bind:value="cheese"
           >
-            {{ cheese.finnish }}
+            {{ cheese.english }}
           </option>
         </select>
       </div>
     </form>
+    <div class="disclaimer">
+      This calculator gives only rough estimate of calories based on data
+      publicly made available by subway group and should not be used as medical
+      reference. Calculator might miss some menu items and some values might be
+      outdated. Calculator is in no way associated with Subway Group.
+    </div>
   </div>
 </template>
 
@@ -138,6 +144,7 @@ export default {
       selectedCheeseII: { calories: 0 },
       size: 1,
       calories: 0,
+      lang: "en",
     };
   },
   props: {
@@ -204,5 +211,10 @@ label {
   font-size: 22px;
   font-weight: 700;
   text-transform: uppercase;
+}
+.disclaimer {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 50px;
 }
 </style>
