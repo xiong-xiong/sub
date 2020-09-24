@@ -38,6 +38,7 @@ h1 {
   color: yellow;
   -webkit-text-stroke: 1px black;
   text-transform: uppercase;
+  text-align: center;
 }
 .home {
   position: relative;
@@ -48,9 +49,13 @@ h1 {
   left: 0;
   height: 100vh;
   width: 100vw;
+  background: url("./assets/veggies.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -2;
   opacity: 0.06;
+}
+#app {
+  font-family: Avenir, Helvetica, sans-serif;
 }
 </style>

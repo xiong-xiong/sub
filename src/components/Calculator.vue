@@ -178,13 +178,16 @@ label {
   font-size: 20px;
 }
 .calcContainer {
+  text-align: center;
   background: white;
   margin: 0 auto;
   padding: 30px 25px;
   opacity: 0.95;
   border: 8px solid rgba(63, 158, 0, 1);
   max-width: 100vw;
-  @media screen and (min-width: 900px) {
+}
+@media screen and (min-width: 900px) {
+  .calcContainer {
     width: 400px;
   }
 }
