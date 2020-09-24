@@ -1,6 +1,6 @@
 # Subway calory calculator 2.0
 
-Subway calory calculator with Vue.js version 2.0
+Subway calory calculator with Vue.js version 2.0. Basicly it is internationlized version.
 
 ## Project setup
 
