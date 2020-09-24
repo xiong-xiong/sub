@@ -1,6 +1,6 @@
-# compound interest calculator
+# Subway calory calculator 2.0
 
-Compound interest calculator with Vue.js
+Subway calory calculator with Vue.js version 2.0
 
 ## Project setup
 
